@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Add New Student Record</h2>
+    
+    <form  [formGroup]="studentForm" (ngSubmit)="save()">
+        <!-- <div class="mb-3">
+            <label for="studentId" class="form-label">Id</label>
+            <input type="number" class="form-control" id="studentId" formControlName = "id" placeholder="Enter student Id" Disabled>
+        </div> -->
+
+        <div class="mb-3">
+            <label for="studentName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="studentName" formControlName = "name" placeholder="Enter student name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="studentEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="studentEmail" formControlName = "email" placeholder="Enter student email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="studentPhone" class="form-label">Phone #</label>
+            <input type="text" class="form-control" id="studentPhone" formControlName = "phone" placeholder="Enter student phone number" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="department" class="form-label">Department</label>
+            <input type="text" class="form-control" id="department" formControlName = "department" placeholder="Enter department name" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-4" [disabled]="!studentForm.valid"><strong>{{isEdit? 'Edit' : 'Save'}}</strong></button>
+        
+    </form>
+</div>
