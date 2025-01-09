@@ -12,10 +12,10 @@ import { HttpParams } from '@angular/common/http';
 export class HeaderComponent {
 
   studentList: IStudent[] = [];
-  totalItems: number = 0;  // Total number of students
-  totalPages: number = 0;  // Total number of pages
-  pageIndex: number = 1;   // Current page index
-  pageSize: number = 5;    // Number of items per page
+  totalItems: number = 0;  
+  totalPages: number = 0;  
+  pageIndex: number = 1;   
+  pageSize: number = 5;    
   sortBy: string = "Name";
   sortOrder: string = "asc";
   filterValue: string = "";
@@ -55,15 +55,14 @@ export class HeaderComponent {
 
   sortData(column: string) {
     if (this.sortBy === column) {
-      // Toggle between 'asc' and 'desc'
       this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
-    } else {
-      // Set the new column and default to 'asc'
+    } 
+    else {
+      
       this.sortBy = column;
       this.sortOrder = 'asc';
     }
   
-    // Reload the data with updated sorting
     this.initialLoad();
     console.log(`Sorting by ${this.sortBy} in ${this.sortOrder} order`);
 
@@ -72,18 +71,11 @@ export class HeaderComponent {
   
 
   onSearch() {
-    // Build the filter value by concatenating name, id, and email (if provided)
+    
     this.filterValue = `${this.name} ${this.id} ${this.email}`.trim().toLowerCase();
-  
-    // Reload the data with the updated filter value
     this.initialLoad();
   }
-  
-
-
-
-
-  // Pagination methods
+ 
   goToPage(page: number) {
     if (page >= 1 && page <= this.totalPages) {
       this.pageIndex = page;
