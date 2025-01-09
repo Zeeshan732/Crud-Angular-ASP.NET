@@ -3,6 +3,7 @@ export interface IStudent{
     name: string,
     email: string,
     phone: string,
-    department: string
+    department: string,
+    date: Date,
   
 }

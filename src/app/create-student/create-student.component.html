@@ -26,6 +26,11 @@
             <label for="department" class="form-label">Department</label>
             <input type="text" class="form-control" id="department" formControlName = "department" placeholder="Enter department name" required>
         </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Department</label>
+            <input type="date" class="form-control" id="date" formControlName = "date" placeholder="Enter department name" required>
+        </div>
         <button type="submit" class="btn btn-primary mb-4" [disabled]="!studentForm.valid"><strong>{{isEdit? 'Edit' : 'Save'}}</strong></button>
         
     </form>

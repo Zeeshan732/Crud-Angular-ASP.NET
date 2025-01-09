@@ -39,6 +39,7 @@ export class CreateStudentComponent {
     email: ["", [Validators.required, Validators.email]],
     phone: ["", [Validators.required]],
     department: ["", [Validators.required]],
+    date: ["", [Validators.required]],
   });
 
   save() {
@@ -51,6 +52,7 @@ export class CreateStudentComponent {
       email: this.studentForm.value.email!,
       phone: this.studentForm.value.phone!,
       department: this.studentForm.value.department!,
+      date: new Date(this.studentForm.value.date!),
     };
 
 
@@ -70,7 +72,7 @@ export class CreateStudentComponent {
       else {
         
         this.httpService.createStudents(student).subscribe(() => {
-          console.log(student)
+          console.log(student.date)
           this.router.navigateByUrl("/header");
         });
       }       

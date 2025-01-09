@@ -1,0 +1,25 @@
+.highlight {
+    background-color: #ffff99; /* Light yellow background for highlighting */
+  }
+  /* Custom styles for the header component */
+.d-flex {
+    gap: 10px; /* Adds space between flex items */
+  }
+  
+  .form-control-sm {
+    max-width: 200px; /* Controls the width of input fields */
+  }
+  
+  select.form-control-sm {
+    width: 100px; /* Limits the width of the page size dropdown */
+  }
+  
+  button {
+    min-width: 100px; /* Ensures buttons have a minimum width */
+  }
+  
+  /* For better button spacing */
+  button + button {
+    margin-left: 10px;
+  }
+  

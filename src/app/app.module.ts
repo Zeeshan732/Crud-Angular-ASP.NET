@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { TopnavComponent } from './topnav/topnav.component';
 import { HeaderComponent } from './header/header.component';
 
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { RouterModule } from '@angular/router';
 import { HttpService } from './Services/http.service';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -26,10 +27,10 @@ import { HttpService } from './Services/http.service';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-    
+    FormsModule
   
   ],
-  providers: [ HttpService],
+  providers: [ HttpService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
