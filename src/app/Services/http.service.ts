@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IStudent } from '../Interfaces/student';
 import { IPageStudent } from '../Interfaces/pagestudent';
+import { IUser, IUserService } from '../Interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -30,9 +31,7 @@ export class HttpService {
         .set('filterValue', filterValue)
     });
   }
-  
 
-  
   
 
   checkIfEmailExists(email: string): Observable<boolean> {
@@ -55,5 +54,14 @@ export class HttpService {
 
   deleteStudent(id: number) {
     return this.http.delete(this.apiURL+"/Student/DeleteStudent/"+id);
+  }
+
+  createUser(RegisterUser: IUser) 
+  {
+    return this.http.post(this.apiURL+"/User/Create/CreateUser",RegisterUser, {responseType: "text"});
+  }
+
+  loginUser(LoginUser: IUserService ){
+    return this.http.post(this.apiURL+"/User/Login/LoginUser", LoginUser, {responseType: "text"});
   }
 }

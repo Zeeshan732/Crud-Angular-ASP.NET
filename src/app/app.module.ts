@@ -12,6 +12,8 @@ import { CreateStudentComponent } from './create-student/create-student.componen
 import { RouterModule } from '@angular/router';
 import { HttpService } from './Services/http.service';
 import { DatePipe } from '@angular/common';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { DatePipe } from '@angular/common';
     AppComponent,
     TopnavComponent,
     HeaderComponent,
-    CreateStudentComponent
+    CreateStudentComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,9 @@ import { DatePipe } from '@angular/common';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    
   
   ],
   providers: [ HttpService, DatePipe],
